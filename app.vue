@@ -1,5 +1,12 @@
+<script setup>
+useHead({
+  titleTemplate: (title) => (title ? `${title} | My Site` : "My Site"),
+});
+</script>
 <template>
   <div>
-    <NuxtPage />
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
   </div>
 </template>
