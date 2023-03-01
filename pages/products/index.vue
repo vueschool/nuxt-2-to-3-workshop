@@ -1,6 +1,13 @@
 <script setup>
 const route = useRoute();
 
+const title = ref("My title");
+
+useHead({
+  title,
+  meta: [{ name: "description", content: "My amazing site." }],
+});
+
 // handle skip
 const skip = ref(route.query.skip | 0);
 watch(skip, () => {
