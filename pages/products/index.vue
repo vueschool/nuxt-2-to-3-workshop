@@ -18,7 +18,10 @@ watch(skip, () => {
 // Fetch data
 const perPage = 30;
 const { data, refresh, pending } = await useFetch(
-  () => `https://dummyjson.com/products?skip=${skip.value}&limit=${perPage}`
+  () => `/products?skip=${skip.value}&limit=${perPage}`,
+  {
+    baseURL: "https://dummyjson.com/",
+  }
 );
 const products = computed(() => data.value.products);
 </script>
