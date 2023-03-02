@@ -23,10 +23,11 @@ const { data, refresh, pending } = await useFetch(
     baseURL: "https://dummyjson.com/",
   }
 );
+const pendingDebounced = refDebounced(pending, 1000);
 const products = computed(() => data.value.products);
 </script>
 <template>
-  <div v-if="pending">loading...</div>
+  <div v-if="pendingDebounced">loading...</div>
   <div v-else>
     <ul>
       <li v-for="product in products" :key="product.id">
