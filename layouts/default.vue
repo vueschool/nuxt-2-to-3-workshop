@@ -1,3 +1,6 @@
+<script setup>
+const user = useUser();
+</script>
 <template>
   <nav class="mb-10">
     <div class="flex bg-gray-800 text-white p-5 justify-between">
@@ -10,7 +13,10 @@
         </li>
       </ul>
       <ul class="flex">
-        <li>
+        <li v-if="user.username">
+          {{ user.username }}
+        </li>
+        <li v-else>
           <NuxtLink to="/login">Login</NuxtLink>
         </li>
       </ul>

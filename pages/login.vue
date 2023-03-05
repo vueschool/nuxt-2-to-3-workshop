@@ -1,13 +1,18 @@
 <script setup lang="ts">
+const user = useUser();
 definePageMeta({
   layout: "plain-centered",
 });
 </script>
 <template>
-  <form>
+  <form @submit.prevent="$router.push('/')">
     <label class="block mb-5">
       Username
-      <input type="text" class="block border-[1px] border-gray-300 rounded" />
+      <input
+        v-model="user.username"
+        type="text"
+        class="block border-[1px] border-gray-300 rounded"
+      />
     </label>
     <label class="block mb-5">
       Password
