@@ -10,17 +10,12 @@ useHead({
 
 // handle skip
 const skip = ref(route.query.skip | 0);
+watch(skip, () => useRouter().push({ query: { skip: skip.value } }));
 
 // Fetch data
 const perPage = 30;
 const { data, pending } = await useFetch(
-  () => `/products?skip=${skip.value}&limit=${perPage}`,
-  {
-    baseURL: "https://dummyjson.com/",
-    onRequest() {
-      useRouter().push({ query: { skip: skip.value } });
-    },
-  }
+  () => `https://dummyjson.com/products?skip=${skip.value}&limit=${perPage}`
 );
 const pendingDebounced = refDebounced(pending, 1000);
 const products = computed(() => data.value.products);

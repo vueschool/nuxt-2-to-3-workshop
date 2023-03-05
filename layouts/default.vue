@@ -6,7 +6,7 @@
           <NuxtLink to="/">Home</NuxtLink>
         </li>
         <li>
-          <NuxtLink to="/products">Products</NuxtLink>
+          <NuxtLink :to="{ name: 'products' }">Products</NuxtLink>
         </li>
       </ul>
       <ul class="flex">
