@@ -1,4 +1,5 @@
 <script setup>
+const count = useCount();
 useHead({
   titleTemplate: (title) => (title ? `${title} | My Site` : "My Site"),
 });
@@ -8,6 +9,14 @@ useHead({
     <NuxtLayout>
       <NuxtLoadingIndicator />
       <NuxtPage />
+      {{ count }}
     </NuxtLayout>
   </div>
 </template>
+
+<style>
+body {
+  background: black;
+  color: white;
+}
+</style>
