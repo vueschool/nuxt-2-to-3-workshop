@@ -14,17 +14,10 @@ watch(skip, () => useRouter().push({ query: { skip: skip.value } }));
 
 // Fetch data
 const perPage = 30;
-
-const { data, pending } = await useAsyncData("products", () =>
-  $fetch(`https://dummyjson.com/products?skip=${skip.value}&limit=${perPage}`)
+const { data, pending } = await useFetch(
+  () => `https://dummyjson.com/products?skip=${skip.value}&limit=${perPage}`,
+  { key: "products" }
 );
-
-// const { data, pending } = await useFetch(
-//   () => `https://dummyjson.com/products?skip=${skip.value}&limit=${perPage}`,
-//   {
-//     key: "products",
-//   }
-// );
 const pendingDebounced = refDebounced(pending, 1000);
 const products = computed(() => data.value.products);
 </script>
