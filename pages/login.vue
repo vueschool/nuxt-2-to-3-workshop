@@ -1,3 +1,8 @@
+<script setup>
+definePageMeta({
+  layout: "plain-centered",
+});
+</script>
 <template>
   <form @submit.prevent="$router.push('/')">
     <div class="form-field mb-5">
