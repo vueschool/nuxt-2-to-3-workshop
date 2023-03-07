@@ -19,7 +19,9 @@ const user = {
           <li>
             {{ user.username }}
           </li>
-          <li>Logout</li>
+          <li>
+            <NuxtLink to="/login">Logout</NuxtLink>
+          </li>
         </template>
         <li v-else>
           <NuxtLink to="/login">Login</NuxtLink>
