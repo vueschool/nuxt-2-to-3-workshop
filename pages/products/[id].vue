@@ -7,7 +7,7 @@ const { data: cached } = useNuxtData("products");
 const id = computed(() => useRoute().params.id);
 
 // change to useLazyFetch so that cached can display while fetching
-const { data: product } = await useLazyFetch(
+const { data: product, error } = await useLazyFetch(
   () => `https://dummyjson.com/products/${id.value}`,
   {
     // must give a key here for each product
@@ -19,6 +19,8 @@ const { data: product } = await useLazyFetch(
       }),
   }
 );
+
+if (error.value) throw createError(error.value);
 
 useHead({
   title: () => product.value?.title,
