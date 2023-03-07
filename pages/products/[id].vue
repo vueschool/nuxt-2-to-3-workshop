@@ -6,6 +6,10 @@ const id = computed(() => useRoute().params.id);
 const product = computed(() => {
   return data.products.find((p) => p.id === Number(id.value));
 });
+
+useHead({
+  title: () => product.value?.title,
+});
 </script>
 
 <template>
