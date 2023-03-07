@@ -1,5 +1,4 @@
 <script setup>
-import { useUser } from "@/stores/User";
 const user = useUser();
 </script>
 <template>

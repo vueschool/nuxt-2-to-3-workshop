@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { useUser } from "@/stores/User";
 const user = useUser();
 definePageMeta({
   layout: "plain-centered",
