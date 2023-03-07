@@ -1,4 +1,6 @@
-<script setup>
+<script setup lang="ts">
+import { useUser } from "@/stores/User";
+const user = useUser();
 definePageMeta({
   layout: "plain-centered",
 });
@@ -9,6 +11,7 @@ definePageMeta({
       <label for="username" class="block"> Username </label>
       <input
         id="username"
+        v-model="user.username"
         type="text"
         class="block border-[1px] border-gray-300 rounded"
       />

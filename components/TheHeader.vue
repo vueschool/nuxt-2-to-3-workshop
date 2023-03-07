@@ -1,7 +1,6 @@
 <script setup>
-const user = {
-  username: "donald_duck_23",
-};
+import { useUser } from "@/stores/User";
+const user = useUser();
 </script>
 <template>
   <nav class="mb-10">
@@ -20,7 +19,7 @@ const user = {
             {{ user.username }}
           </li>
           <li>
-            <NuxtLink to="/login">Logout</NuxtLink>
+            <button @click="user.username = ''">Logout</button>
           </li>
         </template>
         <li v-else>
