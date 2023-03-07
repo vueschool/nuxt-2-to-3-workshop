@@ -10,4 +10,15 @@ const product = computed(() => {
 
 <template>
   <pre>{{ product }}</pre>
+  <div v-if="product" class="opacity-50">
+    <NuxtLink
+      v-if="product.id > 1"
+      :to="`/products/${product.id - 1}`"
+      class="inline-block mr-3"
+      >Previous</NuxtLink
+    >
+    <NuxtLink v-if="product.id < 100" :to="`/products/${product.id + 1}`"
+      >Next</NuxtLink
+    >
+  </div>
 </template>
