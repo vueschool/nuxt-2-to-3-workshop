@@ -9,5 +9,6 @@ useHead({
       <NuxtLoadingIndicator />
       <NuxtPage />
     </NuxtLayout>
+    <Exercise8Alert />
   </div>
 </template>
