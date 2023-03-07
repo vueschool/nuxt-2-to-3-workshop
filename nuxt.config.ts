@@ -5,5 +5,12 @@ export default defineNuxtConfig({
     "@pinia/nuxt",
     "nuxt-lodash",
     "@vueuse/nuxt",
+    "@nuxt/image-edge",
   ],
+  image: {
+    domains: ["i.dummyjson.com"],
+  },
+  experimental: {
+    componentIslands: true,
+  },
 });
