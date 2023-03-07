@@ -13,4 +13,9 @@ export default defineNuxtConfig({
   experimental: {
     componentIslands: true,
   },
+  routeRules: {
+    "/spa": { ssr: false },
+    "/static": { static: true },
+    "/swr": { swr: true },
+  },
 });
