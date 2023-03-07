@@ -1,18 +1,8 @@
-<script setup lang="ts">
-const user = useUser();
-definePageMeta({
-  layout: "plain-centered",
-});
-</script>
 <template>
   <form @submit.prevent="$router.push('/')">
     <label class="block mb-5">
       Username
-      <input
-        v-model="user.username"
-        type="text"
-        class="block border-[1px] border-gray-300 rounded"
-      />
+      <input type="text" class="block border-[1px] border-gray-300 rounded" />
     </label>
     <label class="block mb-5">
       Password
@@ -21,6 +11,6 @@ definePageMeta({
         class="block border-[1px] border-gray-300 rounded"
       />
     </label>
-    <button class="btn">Login</button>
+    <AppButton>Login</AppButton>
   </form>
 </template>

@@ -1,9 +1,4 @@
-<script setup>
-const count = useCount();
-useHead({
-  titleTemplate: (title) => (title ? `${title} | My Site` : "My Site"),
-});
-</script>
+<script setup></script>
 <template>
   <div>
     <NuxtLayout>
@@ -12,10 +7,3 @@ useHead({
     </NuxtLayout>
   </div>
 </template>
-
-<style>
-body {
-  background: black;
-  color: white;
-}
-</style>
