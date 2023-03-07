@@ -9,7 +9,6 @@ useHead({
     <NuxtLayout>
       <NuxtLoadingIndicator />
       <NuxtPage />
-      {{ count }}
     </NuxtLayout>
   </div>
 </template>
