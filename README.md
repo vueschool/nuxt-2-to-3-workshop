@@ -1,42 +1,9 @@
-# Nuxt 3 Minimal Starter
+# Nuxt 2->3 Workshop Exercises
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+This repo contains the boilerplate and solutions to the exercises in the Nuxt 2->3 workshop.
 
-## Setup
+The exercise prompts that compliment this code can be [found in this notion doc](https://vueschool.notion.site/Nuxt-2-3-Exercises-0b8dc3ba81c548febed5ccfdb0a83a7d).
 
-Make sure to install the dependencies:
+The main branch contains the code as it will be at the start of the workshop. It is not intended to be fully functional but a starting point.
 
-```bash
-# yarn
-yarn install
-
-# npm
-npm install
-
-# pnpm
-pnpm install
-```
-
-## Development Server
-
-Start the development server on http://localhost:3000
-
-```bash
-npm run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-npm run build
-```
-
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+During the workshop, you can checkout the starting point for each exercise (ie. `2.1-start`) and then see the solution on it's ending branch (ie `2.1-end`).
