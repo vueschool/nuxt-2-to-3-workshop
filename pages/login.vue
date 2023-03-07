@@ -1,16 +1,23 @@
 <template>
   <form @submit.prevent="$router.push('/')">
-    <label class="block mb-5">
-      Username
-      <input type="text" class="block border-[1px] border-gray-300 rounded" />
-    </label>
-    <label class="block mb-5">
-      Password
+    <div class="form-field mb-5">
+      <label for="username" class="block"> Username </label>
       <input
+        id="username"
+        type="text"
+        class="block border-[1px] border-gray-300 rounded"
+      />
+    </div>
+
+    <div class="form-field mb-5">
+      <label class="block" for="password"> Password </label>
+      <input
+        id="password"
         type="password"
         class="block border-[1px] border-gray-300 rounded"
       />
-    </label>
+    </div>
+
     <AppButton>Login</AppButton>
   </form>
 </template>
