@@ -26,16 +26,28 @@ useHead({
 </script>
 
 <template>
-  <pre>{{ product }}</pre>
-  <div v-if="product" class="opacity-50">
-    <NuxtLink
-      v-if="product.id > 1"
-      :to="`/products/${product.id - 1}`"
-      class="inline-block mr-3"
-      >Previous</NuxtLink
-    >
-    <NuxtLink v-if="product.id < 100" :to="`/products/${product.id + 1}`"
-      >Next</NuxtLink
-    >
+  <div v-if="product">
+    <div class="flex">
+      <NuxtImg
+        v-for="image in product.images"
+        :src="image"
+        :alt="product.title"
+        width="200"
+        height="200"
+        class="block mr-3 border-blue border-2 rounded"
+      />
+    </div>
+    <pre class="my-5">{{ product }}</pre>
+    <div class="opacity-50">
+      <NuxtLink
+        v-if="product.id > 1"
+        :to="`/products/${product.id - 1}`"
+        class="inline-block mr-3"
+        >Previous</NuxtLink
+      >
+      <NuxtLink v-if="product.id < 100" :to="`/products/${product.id + 1}`"
+        >Next</NuxtLink
+      >
+    </div>
   </div>
 </template>
